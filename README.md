@@ -36,8 +36,8 @@ in {your model}.settings.json:
     ```javascript
             "condition": {
               "type": "text",
-              "mode": "**javascript**"
-              "theme" "**material**"
+              "mode": "javascript"
+              "theme" "material"
             }
     ```
 
