@@ -2,15 +2,15 @@
 
 Plugin enabling [CodeMirror](https://codemirror.net/demo/theme.html) editor for Strapi textaera field.
 
-_Please keep in mind before using it that the plugin will replace all textarea field._
+_Please keep in mind that the plugin replaces the textarea field._
 
 ## How it works
 --------
 The plugin replaces/overrides the `textarea` field to a CodeMirror field. 
 The field's language can be configured by a model property named `mode` 
-which defines the CodeMirror mode ([available modes](https://codemirror.net/mode/index.html)). 
+which defines the CodeMirror mode ([available modes](https://codemirror.net)). 
 
-##How to install
+## How to install
 --------
 1. Under the root folder of your project run 
 
@@ -35,6 +35,9 @@ YARN:
               "mode": "**javascript**"
             }
     ```
+
+![alt text](./res/sample.png "CodeMirror JS field")    
+
 For the list of the available modes see the [CodeMirror documentation](https://codemirror.net/mode/index.html).
 
 
