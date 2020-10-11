@@ -1,9 +1,8 @@
 /**
  *
- * InputJSON
+ * CodeMirrorEditor
  *
  */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import cm from 'codemirror';
@@ -11,20 +10,19 @@ import 'codemirror/addon/lint/lint';
 import 'codemirror/addon/edit/closebrackets';
 import 'codemirror/addon/selection/mark-selection';
 import 'codemirror/lib/codemirror.css';
-import 'codemirror/theme/solarized.css';
-import 'codemirror/theme/material.css';
 
 import {isEmpty, trimStart} from 'lodash';
 import jsonlint from './jsonlint';
 import Wrapper from './components';
 
 const WAIT = 600;
-const DEFAULT_THEME = 'solarized dark';
+const DEFAULT_THEME = 'material';
 
 const loadMode = (mode) => {
   if (mode === 'json') {
     require('codemirror/mode/javascript/javascript');
   } else {
+    // FIXME use switch case for each type
     require(`codemirror/mode/${mode}/${mode}`);
   }
   if (mode === 'javascript') {
@@ -38,10 +36,14 @@ const loadMode = (mode) => {
   } else if (mode === 'yaml') {
     require('codemirror/addon/lint/yaml-lint');
   }
+};
 
-}
+const loadTheme = (theme) => {
+  // FIXME switch case to load the given theme
+  require('codemirror/theme/material.css');
+};
 
-class InputJSON extends React.Component {
+class CodeMirrorEditor extends React.Component {
   timer = null;
   mode = 'application/json';
   theme = DEFAULT_THEME;
@@ -51,6 +53,7 @@ class InputJSON extends React.Component {
     this.mode = props.attribute ? props.attribute.mode || this.mode : this.mode;
     this.theme = props.attribute ? props.attribute.theme || this.theme : this.theme;
     loadMode(this.mode);
+    loadTheme(this.theme);
     this.editor = React.createRef();
     this.state = {error: false, markedText: null};
   }
@@ -196,7 +199,7 @@ class InputJSON extends React.Component {
   }
 }
 
-InputJSON.defaultProps = {
+CodeMirrorEditor.defaultProps = {
   disabled: false,
   onBlur: () => {
   },
@@ -205,7 +208,7 @@ InputJSON.defaultProps = {
   value: null,
 };
 
-InputJSON.propTypes = {
+CodeMirrorEditor.propTypes = {
   disabled: PropTypes.bool,
   name: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
@@ -213,4 +216,4 @@ InputJSON.propTypes = {
   value: PropTypes.any,
 };
 
-export default InputJSON;
+export default CodeMirrorEditor;

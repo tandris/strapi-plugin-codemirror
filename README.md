@@ -27,18 +27,23 @@ YARN:
 
 ## How to use
 --------
-{your model}.settings.json:
+You can define the `mode` and `theme` _(not implemented yet)_ attribute as a field property.
+
+Example:
+
+in {your model}.settings.json:
 
     ```javascript
             "condition": {
               "type": "text",
               "mode": "**javascript**"
+              "theme" "**material**"
             }
     ```
 
 ![alt text](./res/sample.png "CodeMirror JS field")    
 
-For the list of the available modes see the [CodeMirror documentation](https://codemirror.net/mode/index.html).
+For the available modes read the [CodeMirror documentation](https://codemirror.net/mode/index.html).
 
 
 ## TODO

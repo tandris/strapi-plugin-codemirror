@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-codemirror",
-  "version": "0.0.1",
+  "version": "1.0.0-beta.1",
   "description": "CodeMirror text editor plugin for Strapi headless CMS",
   "main": "index.js",
   "strapi": {
@@ -9,20 +9,7 @@
     "description": "CodeMirror text editor plugin."
   },
   "scripts": {
-    "analyze:clean": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/rimraf stats.json",
-    "preanalyze": "npm run analyze:clean",
-    "analyze": "node ./node_modules/strapi-helper-plugin/lib/internals/scripts/analyze.js",
-    "prebuild": "npm run build:clean",
-    "build:dev": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/cross-env NODE_ENV=development node ./node_modules/strapi-helper-plugin/node_modules/.bin/webpack --config node_modules/strapi-helper-plugin/lib/internals/webpack/webpack.prod.babel.js --color -p --progress",
-    "build": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/cross-env NODE_ENV=production node node_modules/strapi-helper-plugin/node_modules/.bin/webpack --config node_modules/strapi-helper-plugin/lib/internals/webpack/webpack.prod.babel.js --color -p --progress",
-    "build:clean": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/rimraf admin/build",
-    "start": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/cross-env NODE_ENV=development node ./node_modules/strapi-helper-plugin/lib/server",
-    "generate": "node ./node_modules/strapi-helper-plugin/node_modules/plop --plopfile ./node_modules/strapi-helper-plugin/lib/internals/generators/index.js",
-    "lint": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/eslint --ignore-path .gitignore --ignore-pattern '/admin/build/' --config ./node_modules/strapi-helper-plugin/lib/internals/eslint/.eslintrc.json admin",
-    "prettier": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/prettier --single-quote --trailing-comma es5 --write \"{admin,__{tests,mocks}__}/**/*.js\"",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "prepublishOnly": "npm run build"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -31,19 +18,30 @@
   "author": "tandris",
   "license": "MIT",
   "private": false,
-  "devDependencies": {
-    "strapi-helper-plugin": "^3.2.3"
-  },
+  "devDependencies": {},
   "dependencies": {
+    "codemirror": "^5.58.1",
+    "lodash": "^4.17.20",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "strapi-helper-plugin": "^3.2.3"
   },
   "maintainers": [
     {
-      "name": "t4ndris",
+      "name": "tandris",
       "url": "https://github.com/tandris"
     }
   ],
   "engines": {
     "node": ">= 10.0.0",
     "npm": ">= 6.0.0"
+  },
+  "keywords": [
+    "strapi",
+    "plugin",
+    "codemirror"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
