@@ -1,2 +1,3 @@
-# strapi-plugin-codemirror
-CodeMirror text editor plugin for Strapi headless CMS
+# Strapi plugin strapi-plugin-codemirror
+
+A quick description of strapi-plugin-codemirror.

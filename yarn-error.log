@@ -1,0 +1,43 @@
+Arguments: 
+  /usr/local/bin/node /usr/bin/yarn add -D strapi-helper-plugin
+
+PATH: 
+  /home/tandris/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  12.18.3
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/tandris/dev/dev/tandris/@strapi/strapi-plugin-codemirror/package.json: Unexpected token } in JSON at position 250
+      at JSON.parse (<anonymous>)
+      at /usr/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "strapi-plugin-codemirror",
+    "version": "0.0.1",
+    "description": "CodeMirror text editor plugin for Strapi headless CMS",
+    "main": "index.js",
+    "repository": {
+    "type":"git",
+      "git@github.com:tandris/strapi-plugin-codemirror"
+      },
+    "author": "tandris",
+    "license": "MIT",
+    "private": false
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
