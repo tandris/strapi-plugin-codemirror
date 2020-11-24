@@ -33,13 +33,13 @@ Example:
 
 in {your model}.settings.json:
 
-    ```javascript
+```javascript
             "condition": {
               "type": "text",
               "mode": "javascript"
-              "theme" "material"
+              "theme": "material"
             }
-    ```
+```
 
 ![alt text](./res/sample.png "CodeMirror JS field")    
 
