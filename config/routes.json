@@ -1,12 +1,3 @@
 {
-  "routes": [
-    {
-      "method": "GET",
-      "path": "/",
-      "handler": "strapi-plugin-codemirror.index",
-      "config": {
-        "policies": []
-      }
-    }
-  ]
+
 }

@@ -45,7 +45,7 @@ const loadTheme = (theme) => {
 
 class CodeMirrorEditor extends React.Component {
   timer = null;
-  mode = 'application/json';
+  mode = 'json';
   theme = DEFAULT_THEME;
 
   constructor(props) {
