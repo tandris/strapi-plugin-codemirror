@@ -16,6 +16,7 @@ import jsonlint from './jsonlint';
 import Wrapper from './components';
 
 const WAIT = 600;
+const stringify = JSON.stringify;
 const DEFAULT_THEME = 'material';
 
 const loadMode = (mode) => {
@@ -81,22 +82,21 @@ class CodeMirrorEditor extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (isEmpty(prevProps.value) && !isEmpty(this.props.value) && !this.state.hasInitValue) {
+    if (prevProps.value !== this.props.value && !this.codeMirror.state.focused) {
       this.setInitValue();
     }
   }
 
   setInitValue = () => {
     const {value} = this.props;
-
     try {
-      this.setState({hasInitValue: true});
-
       if (value === null) return this.codeMirror.setValue('');
 
-      return this.codeMirror.setValue(value, null, 2);
+      const nextValue = typeof value !== 'string' ? stringify(value, null, 2) : value;
+
+      return this.codeMirror.setValue(nextValue);
     } catch (err) {
-      return this.setState({error: true});
+      return this.setState({ error: true });
     }
   };
 
